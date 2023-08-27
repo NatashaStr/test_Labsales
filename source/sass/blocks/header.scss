@@ -1,0 +1,323 @@
+.header {
+    margin-bottom: -210px;
+    z-index: 2;
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+    }
+
+    &__logo-wrapper {
+        margin-right: 30px;
+    }
+
+    &__logo-image-desktop {
+        min-width: 190px;
+
+        @include vp-767 {
+            display: none;
+        }
+
+    }
+
+    &__logo-image-mobile {
+        min-width: 148px;
+        display: none;
+
+        @include vp-767 {
+            display: block;
+        }
+    }
+
+    &__logo-image-mobile-dark {
+        min-width: 148px;
+        display: none;
+    }
+
+    &__nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__menu--closed &__nav-wrapper {
+        @include vp-767 {
+            display: none;
+        }
+    }
+
+    &__menu--opened {
+        background-color: $color-primary;
+        color: $color-default-white;
+    }
+
+    &__menu--opened &__menu-container {
+        @include vp-767 {
+            margin-left: -100px;
+            padding-top: 20px;
+        }
+    }
+
+    &__menu--opened &__menu-wrapper {
+        @include vp-767 {
+            justify-content: end;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__menu--opened &__menu-wrapper span {
+        @include vp-767 {
+            display: none;
+        }
+    }
+
+    &__menu--opened &__menu-btn {
+        @include vp-767 {
+            width: 31px;
+            height: 31px;
+            background-color: #fff;
+            border-radius: 50%;
+            background-image: url("../../img/svg/close.svg");
+        }
+    }
+
+    &__menu--opened &__nav-wrapper {
+        @include vp-767 {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__menu--opened &__nav-list {
+        @include vp-767 {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+    }
+
+    &__menu--opened &__nav-item,
+    &__menu--opened &__nav-item:last-child {
+        @include vp-767 {
+            margin-bottom: 20px;
+            margin-right: 0;
+            padding-right: 30px;
+            font-size: 18px;
+            line-height: 150%;
+        }
+    }
+
+    &__menu--opened &__nav-link {
+        @include vp-767 {
+            color: $color-default-white;
+        }
+    }
+
+    &__menu--opened &__logo-image-mobile {
+        @include vp-767 {
+            display: none;
+        }
+    }
+
+    &__menu--opened &__logo-image-mobile-dark {
+        @include vp-767 {
+            display: block;
+        }
+    }
+
+    &__menu--opened &__contact-wrapper {
+        @include vp-767 {
+            align-items: end;
+            margin-left: 0;
+            padding-right: 30px;
+            font-size: 18px;
+            line-height: 150%;
+        }
+    }
+
+    &__menu--opened &__contact-wrapper a {
+        @include vp-767 {
+            color: $color-default-white;
+        }
+    }
+
+    &__menu--opened &__phone {
+        @include vp-767 {
+            margin-bottom: 14px;
+        }
+    }
+
+    &__menu-wrapper {
+        display: none;
+
+        @include vp-767 {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__menu-wrapper span {
+        margin-right: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 40px;
+    }
+
+    &__menu-btn {
+        position: relative;
+        display: block;
+        width: 31px;
+        height: 2px;
+        background-color: $color-primary;
+        border: none;
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 2px;
+            top: -8px;
+            left: 0;
+            background-color: $color-primary;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 2px;
+            bottom: -8px;
+            left: 0;
+            background-color: $color-primary;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__nav-list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__nav-item {
+        position: relative;
+        margin-right: 32px;
+        font-size: 18px;
+        font-weight: 600;
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 11px;
+            height: 11px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            background-image: url("../../img/svg/arrow-down.svg");
+        }
+    }
+
+    &__nav-item:last-child {
+        margin-right: 0;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &__nav-link {
+        @include hover {
+            &:hover:not(.focus-visible) {
+                color: $color-hover;
+            }
+        }
+    }
+
+    &__contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 30px;
+        min-width: 178px;
+    }
+
+    &__phone {
+        font-size: 20px;
+        font-weight: 600;
+
+        @include hover {
+            &:hover:not(.focus-visible) {
+                color: $color-hover;
+            }
+        }
+    }
+
+    &__phone-text {
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: underline;
+
+        @include hover {
+            &:hover:not(.focus-visible) {
+                color: $color-hover;
+            }
+        }
+    }
+
+    &__list {
+        position: relative;
+        margin: 0;
+        padding: 30px 0;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100vw;
+            height: 1px;
+            left: calc(100vw - 100%)/2;
+            background-color: $color-hover;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        @include vp-767 {
+            display: none;
+        }
+    }
+
+    &__item {
+        font-size: 18px;
+        font-weight: 600;
+        margin-right: 35px;
+    }
+
+    &__item:last-child {
+        margin-right: 0;
+    }
+
+    &__link {
+        @include hover {
+            &:hover:not(.focus-visible) {
+                color: $color-hover;
+            }
+        }
+    }
+}

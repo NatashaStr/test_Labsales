@@ -1,0 +1,58 @@
+.main {
+    &__bg-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 210px;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 100%), url("../../img/bg-main.jpg"), lightgray 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // z-index: -2;
+    }
+
+        &__breadcrumbs {
+        display: none;
+
+        @include vp-767 {
+            display: block;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 22px;
+        }
+    }
+
+    &__title {
+        display: block;
+        max-width: 1140px;
+        margin: 65px 0 28px;
+        padding: 0;
+        text-align: center;
+        font-size: 60px;
+        font-weight: 400;
+        line-height: 70px;
+
+        @include vp-767 {
+            font-size: 28px;
+            line-height: 150%;
+            margin-bottom: 25px;
+        }
+    }
+
+    &__title q {
+        font-weight: 700;
+    }
+
+    &__clouds-wrapper {
+        width: 100%;
+        height: 175px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        // z-index: -1;
+        background-image: url("../../img/clouds.png");
+    }
+}

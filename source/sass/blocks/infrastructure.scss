@@ -1,0 +1,50 @@
+.infrastructure {
+    padding-top: 100px;
+
+    &__title {
+        font-size: 45px;
+        font-weight: 700;
+        line-height: 70px;
+
+        @include vp-767 {
+            font-size: 28px;
+            line-height: 150%;
+            text-align: center;
+        }
+    }
+
+    &__map {
+        position: relative;
+        width: 100vw;
+        height: 663px;
+        background-image: url("../../img/map-desktop.png");
+    }
+
+    &__image {
+        object-fit: cover;
+    }
+
+    &__cards-wrapper {
+        position: absolute;
+        top: 0;
+        right: 6%;
+        display: flex;
+        flex-direction: column;
+        z-index: 10000;
+    }
+
+    &__image-desktop {
+        @include vp-767 {
+            display: none;
+        }
+    }
+
+    &__image-mobile {
+        display: none;
+
+        @include vp-767 {
+            display: block;
+        }
+    }
+
+}
